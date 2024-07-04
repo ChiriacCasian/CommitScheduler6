@@ -35,7 +35,7 @@
 - instant feedback on the outcome of the request push with full git error message in the case of a failed push which allows the user to debug unexpected behavior
   - in this example, Git doesn't know which remote branch to push to since there is a mismatch between the local branch name and the configured upstream branch
     thus the user must fix this project specific configuration error (use $git push --dry-run to test push status)
-    ![img.png](img.png)
+    ![img.png](src/main/resources/img.png)
 ### Scheduling commits
 
 - the user can set a minimum desired number of commits per day "Min commits daily" and a maximum number of commits per day "Max commits daily"
@@ -51,5 +51,5 @@ but only one commit to actually push
   - the user can use the "-" and "+" buttons to manually decrease or increase the number of commits scheduled for a day, the commits displaced will automatically be subtracted/added from/to the 
 last day
   - the schedule is persistent and will be saved even after closing the application
-  ![img_1.png](img_1.png)
+  ![img_1.png](src/main/resources/img_1.png)
   - when the user generates a new chart it will not keep track of the of the pushed commits in the current day and will allow more commits to be pushed, because the program does not keep track of commits that have already been manually pushed 
