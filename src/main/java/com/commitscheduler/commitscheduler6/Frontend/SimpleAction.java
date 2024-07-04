@@ -1,17 +1,17 @@
-package com.commitscheduler.commitscheduler6;
+package com.commitscheduler.commitscheduler6.Frontend;
 
+import com.commitscheduler.commitscheduler6.ConfigPersistangeManager;
+import com.commitscheduler.commitscheduler6.PersistanceStateVariables;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
-import com.commitscheduler.commitscheduler6.ConfigDialog;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
+import java.io.IOException;
 
 public class SimpleAction extends AnAction {
     @Override
-    public void actionPerformed(@NotNull AnActionEvent event) {
+    public void actionPerformed(@NotNull AnActionEvent event){
         Project project = event.getProject();
         if (project == null) return;
 
@@ -23,14 +23,17 @@ public class SimpleAction extends AnAction {
         }
 
         // Initialize the dialog with current settings
-        ConfigDialog dialog = new ConfigDialog(state, project);
-
+        ConfigDialog dialog = null;
+        try {
+            dialog = new ConfigDialog(state, project);
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("we here " + state.getHttpLink() + " " + state.getSshKey());
         if (dialog.showAndGet()) {
             // If the user clicked "OK", save the configuration
-            state.setPatToken(dialog.getConfigItem1());
-            state.setSshKey(dialog.getConfigItem2());
-            state.setRemoteBranchName(dialog.getConfigItem3());
-            state.setLocalBranchName(dialog.getConfigItem4());
+            state.setPatToken(dialog.getPatToken());
+            state.setSshKey(dialog.getSshInputedKey());
         }
     }
 

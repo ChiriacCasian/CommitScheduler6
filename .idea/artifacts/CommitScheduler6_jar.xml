@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="CommitScheduler6:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/CommitScheduler6_jar</output-path>
+    <output-path>$PROJECT_DIR$</output-path>
     <root id="archive" name="CommitScheduler6.jar">
       <element id="module-output" name="CommitScheduler6.main" />
       <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/24.0.0/69b8b443c437fdeefa8d20c18d257b94836a92b9/annotations-24.0.0.jar" path-in-jar="/" />
