@@ -8,7 +8,7 @@
                                                                                      </pre>
 </div>
 
-[![Watch the video](https://img.youtube.com/vi/rADHfnx7VZE/maxresdefault.jpg)](https://youtu.be/xHC3F7EWPaA)
+[![Demonstration](https://img.youtube.com/vi/rADHfnx7VZE/maxresdefault.jpg)](https://youtu.be/xHC3F7EWPaA)
 
 [//]: # (https://patorjk.com/software/taag/#p=display&f=Ivrit&t=Commi%20tScheduler)
 ## Features
@@ -25,6 +25,7 @@
 - after adding a new ssh link or PAT token it is necessary to click on the Apply Protocol button to apply changes and test the connection
   - the PAT token can be generated in github setting -> Developer settings -> Personal access tokens -> Fine Grained tokens (here generate a new token with permission to both read and write any repository)
 - ability to FORCE a certain protocol by clicking on the "Currently using :" button, filling out the requested field and applying changes
+- must run IDE in developer mode for the plugin to read auth info
 ### Multiple Branches support and Commit Stack
 
 - automatic detection of the local branches and remote branches which are displayed in the second table alongside the length of the available commit stack for each local branch
