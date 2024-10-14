@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.CommitScheduler"
-version = "2.0"
+version = "4.0"
 
 repositories {
     mavenCentral()
@@ -21,7 +21,6 @@ intellij {
     //plugins.set(listOf("git4idea", "com.intellij.modules.vcs", "org.jetbrains.plugins.terminal"))
     plugins.set(listOf("git4idea"))
 }
-
 
 dependencies {
     implementation("org.knowm.xchart:xchart:3.8.0")
@@ -46,23 +45,6 @@ tasks {
     }
     shadowJar {
         archiveClassifier.set("")
-    }
-    patchPluginXml {
-        sinceBuild.set("222")
-        untilBuild.set("232.*")
-    }
-
-    signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-    }
-
-    publishPlugin {
-        token.set(System.getenv("PUBLISH_TOKEN"))
-    }
-    runPluginVerifier {/// verify these versions for intelij compatibility
-        ideVersions.set(listOf("IU-242.16677.21"))
     }
 }
 tasks.build{dependsOn(tasks.shadowJar) }
